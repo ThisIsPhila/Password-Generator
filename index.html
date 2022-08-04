@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link src="app.js" rel="script">
+</head>
+<body>
+    <!-- INPUT BOX -->
+    <div class="inputBox">
+        <h2>Random Password Generator</h2>
+        <input type="text" name="" placeholder="Create Password" id="password" readonly="" />
+        <div id="btn" onClick="getPassword();">Generate Password</div>
+        <div id="btn" onclick="myFunction();">Copy text</div>
+    </div>
+
+
+    <script type="text/javascript">
+        /* RANDOM GENERATOR */
+        function getPassword() {
+            
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+?><:{}[]";
+            var passwordLength = 16;
+            var password = "";
+
+            for (var i = 0; i < passwordLength; i++) {
+                var randomNumber = Math.floor(Math.random() * chars.length);
+                password += chars.substring(randomNumber, randomNumber + 1);
+
+            }
+            document.getElementById("password").value = password;
+        }
+
+        /* COPY TO CLIPBOARD */
+        function myFunction() {
+            /* Get the text field */
+            var copyText = document.getElementById("password");
+
+            /* Select the text field */
+            copyText.select(); 
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.value);
+
+            /* Alert the copied text */
+            alert("Copied the text: " + copyText.value);
+        }
+    </script>
+</body>
+</html>
