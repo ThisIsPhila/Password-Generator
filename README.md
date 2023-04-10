@@ -6,5 +6,5 @@ This is a Random Password Generator with clean minimal design aesthetic
 * Includes a copy clipboard button to save the password for use later. 
 
 ## Features:
-* 12 character arndom generator
+* 12 character random generator
 * Copy to clip board
